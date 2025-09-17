@@ -22,8 +22,8 @@ A live video frame was captured and one color channel (e.g. red) was modified fr
 We experimented by enhancing the red channel and reducing the intensity of green and blue.
 
 ### 4. Brightest and Darkest Pixels
-From each video frame converted to grayscale, the brightest and darkest pixels were found.  
-We then drew colored circles on those positions.  
+From an image the brightest and darkest pixels were found.  
+We then drew colored circles on that positions.  
 The same idea was later extended to detect the brightest/darkest 8x8 regions.
 
 ### 5. Pop Art Effect
