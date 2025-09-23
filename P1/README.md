@@ -1,4 +1,4 @@
-Authors: Francesco Faustino Greco - Bianca Cocci
+Authors: Francesco Faustino Greco - Bianca Cocci GRUPO 05  
 
 # Visual Computing - Practice 1 Solutions
 
