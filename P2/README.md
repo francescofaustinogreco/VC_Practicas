@@ -11,7 +11,6 @@ El objetivo principal de estas prácticas fue familiarizarnos con técnicas fund
 ## Índice  
 
 1. [Introducción](#introducción)  
-2. [Requisitos](#requisitos)  
 3. [Estructura del repositorio](#estructura-del-repositorio)  
 4. [Ejercicios](#ejercicios)  
    - [Ejercicio 1: Cuenta de píxeles blancos por filas](#1-cuenta-de-píxeles-blancos-por-filas)  
@@ -30,27 +29,9 @@ Además de la parte técnica, también se buscó un enfoque experimental y artí
 
 ---
 
-## Requisitos  
-
-Para ejecutar los notebooks de esta práctica, se recomienda tener instalados los siguientes paquetes de Python:  
-
-- Python 3.8 o superior  
-- OpenCV (cv2)  
-- NumPy  
-- Jupyter Notebook o JupyterLab  
-
-La instalación puede hacerse fácilmente con:  
-
-```bash
-pip install opencv-python numpy jupyter
-```
-
----
-
 ## Estructura del repositorio  
 
 - `VC_P2.ipynb`: Notebook principal con la implementación de las soluciones.  
-- `imagenes/`: Carpeta con las imágenes utilizadas en los ejercicios.  
 - `README.md`: Documento de explicación y guía (este archivo).  
 
 ---
@@ -108,4 +89,4 @@ El objetivo fue mostrar cómo las herramientas técnicas pueden servir de base p
 ## Créditos  
 
 **Autores:** Francesco Faustino Greco - Bianca Cocci (GRUPO 05)  
-**Traducción realizada con ayuda de Catgut.**  
+**Traducción realizada con ayuda de ChatGPT.**  
