@@ -80,20 +80,13 @@ El código convierte los frames a escala de grises, aplica suavizado Gaussiano p
 
 ## Fuentes y Documentación
 
-- **Internet:** Se ha utilizado internet para la búsqueda de información relativa al funcionamiento de la estrategia de **[Sobel](https://scispace.com/pdf/edge-detection-by-modified-otsu-method-167ccq2st7.pdf)**, aplicando también el **[Otsu](https://learnopencv.com/otsu-thresholding-with-opencv/)** y la estrategia de **[Canny](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html)**. Adicionalmente, para la última tarea se ha tomado inspiración de los vídeos: [My little piece of privacy](https://www.niklasroy.com/project/88/my-little-piece-of-privacy), [Messa di voce](https://youtu.be/GfoqiyB1ndE?feature=shared) y [Virtual air guitar](https://youtu.be/FIAmyoEpV5c?feature=shared).
-
-- **Inteligencia Artificial Generativa (ChatGPT):** Se ha utilizado la IA generativa para refactorizar el código de la [tarea 2](#umbralizado-de-imagen-a-8-bits) para convertirlo en una función con el objetivo de poder implementarla de manera simple como un modo adicional en la [tarea 3](#modos-de-captura-por-webcam).
+- **Inteligencia Artificial Generativa (ChatGPT):** Se ha utilizado la IA generativa para traducir del español al italiano
 
 - **Enlaces:**
-    - https://scispace.com/pdf/edge-detection-by-modified-otsu-method-167ccq2st7.pdf
     - https://learnopencv.com/otsu-thresholding-with-opencv/
     - https://chatgpt.com/
     - https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html
     - https://www.niklasroy.com/project/88/my-little-piece-of-privacy
-    - https://youtu.be/GfoqiyB1ndE?feature=shared
-    - https://youtu.be/FIAmyoEpV5c?feature=shared
-
-Para ver el resultado y código de las tareas, véase el [Notebook](./Exercises_P2.ipynb) asociado a la carpeta de la práctica en cuestión **(VC_P2)**.
 
 
 ## Resultados y Código
