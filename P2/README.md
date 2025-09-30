@@ -7,7 +7,7 @@ Authors: Francesco Faustino Greco - Bianca Cocci GRUPO 05
 
 - [Número máximo de píxeles blancos](#número-máximo-de-píxeles-blancos)
 - [Umbralizado de imagen a 8 bits](#umbralizado-de-imagen-a-8-bits)
-- [Modos de captura por WebCam](#modos-de-captura-por-webcam)
+- [Webcam Filtrada en Tiempo Real](#webcam-filtrada-en-tiempo-real)
 - [Interactive motion art](#interactive-motion-art)
 - [Fuentes y Documentación](#fuentes-y-documentación)
 
@@ -43,27 +43,34 @@ Entre sus características destacan:
 
 - Las filas y columnas seleccionadas suelen ser menos numerosas pero más precisas y se alinean más con los contornos más claros de la imagen.
 
-## Modos de captura por WebCam
+# Webcam Filtrada en Tiempo Real
 
-En esta tarea se propone un demostrador de los modos de detección de bordes aplicados en la tarea anterior, en este caso, se va a aplicar en las imágenes recogidas a través de la WebCam. Adicionalmente, se han aplicado diferentes modos de imagen adicionales. Los modos de imagen implementados son:
+Este proyecto en Python utiliza **OpenCV** para capturar video desde la webcam y aplicar filtros en tiempo real.  
+El usuario puede cambiar de modo usando el teclado (`1`, `2` o `3`) y salir presionando `q` o `ESC`.
 
-- **"o", original:** Es el modo de imagen por defecto que le entra a la WebCam.
+## Modos disponibles
 
-- **"e", espejo:** Le da la vuelta a la imagen en el eje X, mostrando así la visión real que tiene una persona sobre la imagen.
+1. **Modo 1 – Normal**  
+   Muestra el video de la webcam sin ningún filtro.
 
-- **"g", gris:** La imagen original que recibe como entrada la WebCam se pone en escala de grises.
+2. **Modo 2 – Robocop**  
+   - Convierte la imagen a escala de grises.  
+   - Aplica el operador **Sobel** para resaltar bordes.  
+   - Detecta el punto más brillante de la imagen y lo marca con:  
+     - un rectángulo verde de tamaño fijo,  
+     - una cruz completa,  
+     - un pequeño círculo en el centro.
 
-- **"c", canny:** Convierte la imagen de entrada en una escala de blancos y grises para depsués de umbralizarla mostrar únicamente los bordes detectados.
+3. **Modo 3 – Predator (visión térmica)**  
+   - Convierte la imagen a escala de grises.  
+   - Aplica una **LUT (Look-Up Table)** personalizada para simular una visión térmica coloreada, que va del azul al blanco.
 
-- **"y", canny filas y columnas:** Usando el método para la obtención de las filas y columnas de modo canny creado para la tarea anterior, se aplica pero a la imagen de entrada de la WebCam.
+## Controles del teclado
 
-- **"s", sobel:** Convierte la imagen de entrada en una escala de blancos y grises para después de umbralizarla mostrar únicamente los bordes detectados.
-
-- **"x", sobel filas y columnas:** Usando el método para la obtención de filas y columnas de modo sobel creado para la tarea anterior, se aplica a la imagen de entrada de la WebCam.
-
-- **"f", substracción de fondo:** Usando una cámara fija se construye un fondo sin demasiado movimiento y en cada iteración de la captura de fotogramas se compara si un pixel ha cambiado de estado y lo pone en blanco.
-
-Para cambiar los modos de visualización, se ha de pulsar por teclado las teclas mecionadas en el menú de opciones que se printea al ejecutar el script inferior.
+- `1`: modo normal  
+- `2`: modo Robocop  
+- `3`: modo Predator  
+- `q` o `ESC`: salir del programa
 
 ## Interactive Motion Art
 
