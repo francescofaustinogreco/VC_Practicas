@@ -30,4 +30,4 @@ Todas las soluciones fueron desarrolladas paso a paso durante la práctica.
 Cuando no sabíamos cómo proceder, buscamos pistas y ejemplos en StackOverflow o YouTube.  
 El objetivo no fue la perfección, sino experimentar con OpenCV y la manipulación de imágenes.  
 
-**Traducción realizada con ayuda de Catgut.**
+**Traducción realizada con ayuda de ChatGPT.**
