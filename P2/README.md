@@ -1,6 +1,6 @@
 <!-- @import "design/style.css" -->
 
-# **VISION PRO COMPUTADOR - PRACTICAS 2**
+# **VISION POR COMPUTADOR - PRACTICAS 2**
 
 ## Índice
 
