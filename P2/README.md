@@ -1,10 +1,9 @@
 <!-- @import "design/style.css" -->
 
-# **SEGUNDO CONJUNTO DE TAREAS A REALIZAR**
+# **VISION PRO COMPUTADOR - PRACTICAS 2**
 
 ## Índice
 
-- [Preparativos para las tareas](#preparativos-para-las-tareas)
 - [Número máximo de píxeles blancos](#número-máximo-de-píxeles-blancos)
 - [Umbralizado de imagen a 8 bits](#umbralizado-de-imagen-a-8-bits)
 - [Modos de captura por WebCam](#modos-de-captura-por-webcam)
@@ -12,50 +11,6 @@
 - [Fuentes y Documentación](#fuentes-y-documentación)
 
 Este segundo conjunto de tareas consiste en hacer uso de las técnicas de **[Sobel](https://scispace.com/pdf/edge-detection-by-modified-otsu-method-167ccq2st7.pdf)** con **[Otsu](https://learnopencv.com/otsu-thresholding-with-opencv/)** y de **[Canny](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html)** para obtener los bordes de las imágenes para tratar con ellas tanto en vídeo capturado por la WebCam como para mostrar información obtenida a partir de una [imagen](../VC_P2/Resources/mandril.jpg).
-
-## Preparativos para las tareas
-
-Para la realización de las siguientes tareas, se va a utilizar el mismo *enviroment* de Python llamado VC_P1 creado en el [primer conjunto de tareas](../VC_P1/Exercises_P1.ipynb), la única dependencia adicional que se ha de descargar es la que viene dada por el paquete **Pillow**.
-
-```bash
-pip install Pillow
-```
-
-Adicionalmente, se va a cargar la [imagen](../VC_P2/Resources/mandril.jpg) a utilizar en las posteriores tareas, de forma que no sea necesario cargarla en cada uno de los ejercicios en donde se requiera su uso.
-
-Por último antes de empezar, se van a inicializar todos los paquetes requeridos para la correcta ejecución de los ejercicios.
-
-```python
-import cv2  
-import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image, ImageDraw, ImageFont
-
-image = cv2.imread('Resources/mandril.jpg') 
-
-if image is not None:
-    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    plt.figure()
-    plt.axis("off")
-    plt.imshow(image_rgb) 
-    plt.show()
-    heigth, width = image.shape[:2]
-    print(f'La imagen tiene un tamaño de {width}x{heigth} pixeles')
-else: 
-    print('Imagen no encontrada')
-```
-
-Para las tareas también va a ser de gran utilidad poseer la imagen en escala de grises, por lo tanto, se va a obtener la misma.
-
-```python
-gray_img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-plt.figure()
-plt.axis("off")
-plt.imshow(gray_img, cmap='gray') 
-plt.show()
-```
-
-Realizado lo anterior, se procede a empezar con las tareas que conforman la práctica.
 
 ## Número máximo de píxeles blancos
 
@@ -274,15 +229,22 @@ mode = 1
 
 # LUT para visión térmica (Predator)
 thermal_lut = np.zeros((256,1,3), dtype=np.uint8)
+
 for i in range(256):
-    if i < 64:      # da nero a blu
-        thermal_lut[i,0] = [4*i, 0, 0]  # B cresce
-    elif i < 128:   # da blu a verde
-        thermal_lut[i,0] = [255, 4*(i-64), 0]
-    elif i < 192:   # da verde a rosso
-        thermal_lut[i,0] = [255-(4*(i-128)), 255, 4*(i-128)]
-    else:           # da rosso a bianco
-        thermal_lut[i,0] = [0, 255-(4*(i-192)), 255]
+    if i < 64:        # negro -> azul
+        thermal_lut[i,0] = [i*4, 0, 0]              # el canal azul aumenta gradualmente
+    elif i < 128:     # azul -> cian
+        thermal_lut[i,0] = [255, (i-64)*4, 0]       # azul al máximo, verde va creciendo
+    elif i < 160:     # cian -> verde
+        thermal_lut[i,0] = [255-(i-128)*8, 255, 0]  # azul disminuye, verde al máximo
+    elif i < 192:     # verde -> amarillo
+        thermal_lut[i,0] = [0, 255, (i-160)*8]      # se añade rojo, verde se mantiene
+    elif i < 224:     # amarillo -> rojo
+        thermal_lut[i,0] = [0, 255-(i-192)*8, 255]  # verde disminuye, rojo al máximo
+    else:             # rojo -> blanco
+        val = min((i-224)*11, 255)
+        thermal_lut[i,0] = [val, val, 255]          # se añaden azul y verde hasta llegar a blanco
+
 
 while True:
     ret, frame = vid.read()
