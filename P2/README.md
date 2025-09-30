@@ -1,4 +1,5 @@
 <!-- @import "design/style.css" -->
+Authors: Francesco Faustino Greco - Bianca Cocci GRUPO 05  
 
 # **VISION POR COMPUTADOR - PRACTICAS 2**
 
