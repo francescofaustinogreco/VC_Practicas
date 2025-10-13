@@ -21,11 +21,15 @@ Posteriormente, se cuentan los píxeles blancos presentes en cada fila de la ima
 
 Finalmente, se muestran tres resultados: la imagen **[Canny](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html)**, la [imagen original](../VC_P2/Resources/mandril.jpg) con las filas destacadas en rojo y un gráfico con el porcentaje de píxeles blancos por fila.
 
+<p align="center">
+  <img src="Resources/tarea1.png" alt="Número máximo de píxeles blancos" width="600">
+</p>
+
 ## Umbralizado de imagen a 8 bits
 
-Se va a aplicar un umbralizado de la imagen del [mandril](../VC_P2/Resources/mandril.jpg) tras pasarla a escala de grises y posteriormente, se va a realizar el conteo por filas y columnas. Adicionalmente, se va a mostrar el dato del valor máximo de las filas y columnas, además de determinar las mismas que tengan un valor por encima del 90% del máximo.
+Se va a aplicar un umbralizado de la imagen del [mandril](../VC_P2/mandril.jpg) tras pasarla a escala de grises y posteriormente, se va a realizar el conteo por filas y columnas. Adicionalmente, se va a mostrar el dato del valor máximo de las filas y columnas, además de determinar las mismas que tengan un valor por encima del 90% del máximo.
 
-Por último, se usa la imagen del [mandril](../VC_P2/Resources/mandril.jpg) para mostrar las filas y columnas obtenidas tras realizar lo anterior mencionado usando la técnica de **[Sobel](https://scispace.com/pdf/edge-detection-by-modified-otsu-method-167ccq2st7.pdf)** y la técnica de **[Canny](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html)**.
+Por último, se usa la imagen del [mandril](../VC_P2/mandril.jpg) para mostrar las filas y columnas obtenidas tras realizar lo anterior mencionado usando la técnica de **[Sobel](https://scispace.com/pdf/edge-detection-by-modified-otsu-method-167ccq2st7.pdf)** y la técnica de **[Canny](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html)**.
 
 La técnica del **[Sobel](https://scispace.com/pdf/edge-detection-by-modified-otsu-method-167ccq2st7.pdf)** consiste en detectar bordes más continuos y gruesos ya que calcula la magnitud del gradiente en todas las partes, a esto se le aplica el umbral **[Otsu](https://learnopencv.com/otsu-thresholding-with-opencv/)** el cual suele conservar bastantas transiciones de intensidad. 
 
@@ -42,6 +46,10 @@ Entre sus características destacan:
 - Es más selectivo, descartando transiciones débiles y ruido.
 
 - Las filas y columnas seleccionadas suelen ser menos numerosas pero más precisas y se alinean más con los contornos más claros de la imagen.
+
+<p align="center">
+  <img src="Resources/tarea2.png" alt="Umbralizado de imagen a 8 bits" width="600">
+</p>
 
 # Webcam Filtrada en Tiempo Real
 
@@ -61,9 +69,17 @@ El usuario puede cambiar de modo usando el teclado (`1`, `2` o `3`) y salir pres
      - una cruz completa,  
      - un pequeño círculo en el centro.
 
+<p align="center">
+  <img src="Resources/tarea4_2.png" alt="Robocop" width="600">
+</p>
+
 3. **Modo 3 – Predator (visión térmica)**  
    - Convierte la imagen a escala de grises.  
    - Aplica una **LUT (Look-Up Table)** personalizada para simular una visión térmica coloreada, que va del azul al blanco.
+
+<p align="center">
+  <img src="Resources/tarea4_3.png" alt="Predator" width="600">
+</p>
 
 ## Controles del teclado
 
@@ -85,6 +101,10 @@ La inspiración del proyecto viene de tres fuentes:
 El concepto consiste en una instalación donde la cámara capta a la persona en tiempo real, detecta movimientos o cambios en la escena y genera un efecto visual dinámico basado en los bordes, colores y diferencias entre frames, creando una especie de *“pintura en tiempo real”* que refleja la interacción del espectador con el espacio. 
 
 El código convierte los frames a escala de grises, aplica suavizado Gaussiano para reducir el ruido, calcula los bordes mediante el filtro **[Sobel](https://scispace.com/pdf/edge-detection-by-modified-otsu-method-167ccq2st7.pdf)** y detecta movimiento comparando el frame actual con el anterior. En la ventana principal, *Demostrador Interactivo*, las zonas con movimiento se colorean en rojo y se superponen los bordes **[Sobel](https://scispace.com/pdf/edge-detection-by-modified-otsu-method-167ccq2st7.pdf)** para generar un efecto visual artístico. La ventana *Movimiento* muestra únicamente la máscara binaria del movimiento detectado entre frames consecutivos, mientras que la ventana *Fondo* presenta el modelo del fondo estimado por el background subtractor, permitiendo diferenciar claramente los objetos móviles del fondo estático. La ejecución se realiza en tiempo real y finaliza al pulsar la tecla ESC, liberando todos los recursos de la cámara.
+
+<p align="center">
+  <img src="Resources/tarea5.png" alt="Interactive Motion Art" width="600">
+</p>
 
 ## Fuentes y Documentación
 
