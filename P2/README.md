@@ -22,7 +22,7 @@ Posteriormente, se cuentan los píxeles blancos presentes en cada fila de la ima
 Finalmente, se muestran tres resultados: la imagen **[Canny](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html)**, la [imagen original](../VC_P2/Resources/mandril.jpg) con las filas destacadas en rojo y un gráfico con el porcentaje de píxeles blancos por fila.
 
 <p align="center">
-  <img src="Resources/tarea1.png" alt="Número máximo de píxeles blancos" width="600">
+  <img src="Resources/tarea1.png" alt="Número máximo de píxeles blancos" width="400">
 </p>
 
 ## Umbralizado de imagen a 8 bits
