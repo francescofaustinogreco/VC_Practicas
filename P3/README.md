@@ -117,7 +117,6 @@ for img_path in sorted(output_dir.glob("*.png")):
   <img src="Resources/output1.png" alt="Output1" width="400">
   <img src="Resources/output2.png" alt="Output2" width="400">
 </p>
----
 
 ## Fuentes y Documentación
 
