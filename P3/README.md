@@ -9,7 +9,6 @@ Autores: Francesco Faustino Greco - Bianca Cocci
 - [Introducción](#introducción)
 - [Identificación de monedas](#Identificación-de-monedas)
 - [Características Geométricas](#características-geométricas)
-- [Código Fuente](#código-fuente)
 - [Fuentes y Documentación](#fuentes-y-documentación)
 
 ---
@@ -35,7 +34,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 
 ---
 
-## Identificación de monedas (TAREA 1)
+## Identificación de monedas
 
 En esta primera tarea, el objetivo fue **detectar e identificar monedas** en una imagen proporcionada.  
 Para ello, se aplicaron distintas **técnicas de segmentación y procesamiento morfológico** que permitieron aislar las monedas del fondo y posteriormente calcular diferentes **propiedades geométricas y de color**.
@@ -53,7 +52,7 @@ Finalmente, se representaron los resultados superponiendo los contornos detectad
 
 ---
 
-## Características Geométricas (TAREA 2)
+## Características Geométricas
 
 En esta tarea, el objetivo consiste en **extraer características geométricas y/o visuales** de las imágenes proporcionadas, con el fin de **aprender patrones que permitan identificar partículas** en nuevas imágenes.
 
@@ -81,8 +80,6 @@ Una vez obtenidas las características, se entrenó un modelo de clasificación 
 Estoy creando más imágenes para el entrenamiento (volteadas)...
 Imágenes de entrenamiento listas.
 ```
-
-
 
 #### Preprocesamiento de imágenes
 1. **Conversión a escala de grises** mediante `cv2.cvtColor`.  
