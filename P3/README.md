@@ -73,7 +73,53 @@ En el trabajo **SMACC: A System for Microplastics Automatic Counting and Classif
 Estas características permiten describir cuantitativamente la forma y proporciones de las partículas, facilitando su posterior **clasificación automática**.  
 Una vez obtenidas las características, se entrenó un modelo de clasificación (por ejemplo, *k-NN*, *SVM* o *Random Forest*), evaluando su desempeño sobre los datos de test y generando la correspondiente **matriz de confusión**, donde se observó el número de aciertos y errores por clase.
 
+#### Carga de imágenes y anotaciones
+- Se leen las imágenes de entrenamiento y la imagen de prueba **`MPs_test.jpg`**.  
+- Se cargan las anotaciones de las partículas (*bounding boxes*) desde el archivo **`MPs_test_bbs.csv`**, el cual indica la posición y la clase de cada partícula.
 
+```python
+Estoy creando más imágenes para el entrenamiento (volteadas)...
+Imágenes de entrenamiento listas.
+```
+
+
+
+#### Preprocesamiento de imágenes
+1. **Conversión a escala de grises** mediante `cv2.cvtColor`.  
+2. **Filtrado con desenfoque gaussiano** para reducir el ruido.  
+3. **Binarización** aplicando un umbral adaptativo o el método de **Otsu**.  
+4. **Operaciones morfológicas** (apertura y cierre) para limpiar el fondo y separar correctamente las partículas.
+Estas características se normalizan mediante `StandardScaler` para mejorar el rendimiento del modelo.
+
+
+####  Entrenamiento del clasificador
+- Se utiliza un modelo **K-Nearest Neighbors (KNN)** (`sklearn.neighbors.KNeighborsClassifier`) entrenado con las características de las partículas conocidas.  
+- El número de vecinos (*k*) se selecciona de forma experimental para **maximizar la precisión** del modelo.
+
+```python
+for img_path in sorted(output_dir.glob("*.png")):
+    label = img_path.name.split('_')[0]  # El nombre antes del guion bajo es la etiqueta
+    image = cv2.imread(str(img_path))
+    features = extract_geometric_features(image)
+    if features:
+        X_train.append(list(features.values()))
+        y_train.append(label)
+```
+
+#### Evaluación del modelo
+- Se predicen las clases de las partículas en la imagen de prueba.  
+- Se calcula la **precisión global (accuracy)** mediante `accuracy_score`.  
+- Se genera la **matriz de confusión** (`confusion_matrix`) para visualizar los aciertos y errores por clase.
+
+
+#### Visualización de resultados
+- Se dibujan los **contornos** y las **etiquetas de clase** sobre la imagen original.  
+- Se muestran las **métricas de rendimiento** y la **matriz de confusión** utilizando `matplotlib` y `seaborn`.
+
+<p align="center">
+  <img src="Resources/output1.png" alt="Output1" width="400">
+  <img src="Resources/output2.png" alt="Output2" width="400">
+</p>
 ---
 
 ## Fuentes y Documentación
