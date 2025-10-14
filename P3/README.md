@@ -76,16 +76,6 @@ Una vez obtenidas las características, se entrenó un modelo de clasificación 
 
 ---
 
-## Código Fuente
-
-A continuación se muestra el fragmento principal del código empleado para la práctica:
-
-```python
-
-```
-
----
-
 ## Fuentes y Documentación
 
 - [Documentación oficial de OpenCV](https://docs.opencv.org/)  
