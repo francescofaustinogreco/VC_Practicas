@@ -100,7 +100,11 @@ El sistema fue evaluado con tres tipos de imágenes para probar la robustez del 
   - La Calibración Global se ajustó correctamente en el segundo caso, demostrando que el cálculo promedio del factor de conversión es efectivo incluso cuando la escala inicial es desconocida.
 
 <p align="center">
-  <img src="rsc/TAREA1/monete.jpg" alt="monete" width="400">
+  <img src="Resources/tarea1_1.jpeg" alt="monete" width="400">
+</p>
+
+<p align="center">
+  <img src="Resources/tarea1_3.jpeg" alt="foto" width="400">
 </p>
 
 #### Escenario Real (Fotografía Propia)
@@ -116,8 +120,9 @@ El sistema fue evaluado con tres tipos de imágenes para probar la robustez del 
      - La falla proviene de la localización, ya que la transformada de Hough no logró encontrar las otras monedas.
 
 <p align="center">
-  <img src="rsc/Resources/tarea1_3.jpeg" alt="foto" width="400">
+  <img src="Resources/tarea1_2.jpeg" alt="foto" width="400">
 </p>
+
 
 ---
 
