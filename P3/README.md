@@ -49,10 +49,6 @@ Los pasos principales fueron los siguientes:
 
 Finalmente, se representaron los resultados superponiendo los contornos detectados y mostrando las etiquetas de clasificación sobre la imagen original, verificando visualmente la correcta identificación de las monedas.
 
-<p align="center">
-  <img src="rsc/TAREA1/monete.jpg" alt="monete" width="400">
-</p>
-
 #### Detección y Preprocesamiento (Sección 2)
 
 1. **Carga de Imagen:** Se carga el archivo de imagen especificado (`cv2.imread`).  
